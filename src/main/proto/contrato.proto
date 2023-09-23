@@ -1,0 +1,27 @@
+syntax = "proto3";
+package proto;
+
+option java_multiple_files = true;
+option java_package = "generated";
+option java_outer_classname = "HelloProto";
+
+service user {
+    rpc login (LoginRequest) returns (LoginResponse);
+    rpc logout(Empty) returns (LoginResponse);
+}
+
+message LoginRequest {
+    string password = 1;
+    string username = 2;
+}
+
+message LoginResponse {
+    string response = 1;
+    int32 status = 2;
+
+}
+
+message Empty {
+    
+}
+
